@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gravity Simulator</title>
+
+  <style>
+  
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 0;
+      padding: 24px;
+    }
+
+    h1 {
+      font-weight: 600;
+      font-size: 1.6rem;
+    }
+
+   
+    #box {
+      position: relative;
+      width: 200px;
+      height: 400px;
+      background: #fff;
+      border: 2px solid #222;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+
+    #ball {
+      position: absolute;
+      left: 80px;              
+      top: 0;
+      width: 40px;
+      height: 40px;
+      background: #e63946;
+      border-radius: 50%;
+    }
+
+ 
+    .stats {
+      margin-top: 12px;
+      display: flex;
+      gap: 18px;
+      font-size: 0.9rem;
+    }
+
+    
+    .controls {
+      margin-top: 20px;
+      width: 260px;
+    }
+
+    .controls label {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    .controls input[type="range"],
+    .controls select {
+      width: 100%;
+      margin-bottom: 14px;
+    }
+
+    .controls select {
+      padding: 6px;
+      font-size: 1rem;
+      border: 2px solid #222;
+      border-radius: 6px;
+      background: #fff;
+      color: #222;
+    }
+
+   
+    .buttons {
+      margin-top: 6px;
+      display: flex;
+      gap: 10px;
+    }
+
+    button {
+      padding: 10px 18px;
+      font-size: 1rem;
+      border: 2px solid #222;
+      background: #fff;
+      color: #222;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #222;
+      color: #fff;
+    }
+
+    
+    a.back {
+      margin-top: 24px;
+      padding: 10px 18px;
+      border: 2px solid #222;
+      border-radius: 6px;
+      color: #222;
+      text-decoration: none;
+    }
+
+    a.back:hover {
+      background: #222;
+      color: #fff;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Gravity Simulator</h1>
+
+  <div id="box">
+    <div id="ball"></div>
+  </div>
+
+  
+  <div class="stats">
+    <span>Height: <b id="statHeight">0</b> px</span>
+    <span>Speed: <b id="statSpeed">0</b></span>
+    <span>Time: <b id="statTime">0.0</b> s</span>
+  </div>
+
+  <div class="controls">
+    <label for="planetSelect">Gravity</label>
+    <select id="planetSelect">
+      <option value="1">Earth</option>
+      <option value="0.165">Moon</option>
+      <option value="0.38">Mars</option>
+      <option value="2.5">Jupiter</option>
+    </select>
+
+    <label for="heightSlider">
+      Height: <span id="heightValue">360</span> px
+    </label>
+    <input type="range" id="heightSlider" min="0" max="360" value="360">
+
+    <label for="velocitySlider">
+      Starting velocity: <span id="velocityValue">0</span>
+      (negative = up, positive = down)
+    </label>
+    <input type="range" id="velocitySlider" min="-20" max="20" value="0">
+
+    <label for="bounceSlider">
+      Bounciness: <span id="bounceValue">70</span>%
+    </label>
+    <input type="range" id="bounceSlider" min="0" max="100" value="70">
+
+    <div class="buttons">
+      <button id="startBtn">Start</button>
+      <button id="resetBtn">Reset</button>
+    </div>
+  </div>
+
+  
+  <a class="back" href="../Experiments/exp.html"><== Back to Experiments</a>
+
+ 
+</body>
+
+
+</html>
