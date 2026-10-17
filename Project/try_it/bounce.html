@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>Ball Bouncing Simulator</title>
+    <style>
+    body {
+    background: white;
+    color: black;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+  }
+  #box {
+    position: relative;
+    width: 300px;
+    max-width: 100%;
+    height: 350px;
+    margin: 20px auto;
+    border: 2px solid black;
+    background: white;
+  }
+  #ball {
+    position: absolute;
+    left: 130px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: red;
+  }
+  button {
+    padding: 8px 16px;
+    font-size: 16px;
+    margin: 4px;
+    cursor: pointer;
+  }
+    </style>
+</head>
+<body>
+
+    <h2>Ball Bouncing Simulation</h2>
+    <p>Bounces: <span id="count">0</span></p>
+
+    <p>In Every Bounce, the ball looses some of its energy.</p>
+
+    <div id="box">
+        <div id="ball">
+
+        </div>
+    </div>
+
+    <p>That is why each bounce is low the one before until the ball stops.</p>
+
+    <button id="start">Start</button>
+    <button id="reset">Reset</button>
+    <br>
+    <button id="back"><a href="../Experiments/exp.html">Back to Experiments</a></button>
+
+    
+</body>
+<script>
+   var ball = document.getElementById("ball");
+  var count = document.getElementById("count");
+
+  var ballY = 0;          
+  var speed = 0;          
+  var bounces = 0;
+  var timer = null;
+
+  var gravity = 0.5;      
+  var energyKept = 0.7;   
+  var ground = 350 - 4 - 40;  
+
+  function move() {
+    speed = speed + gravity;
+    ballY = ballY + speed;
+
+    
+    if (ballY >= ground) {
+      ballY = ground;
+      speed = -speed * energyKept;
+      bounces = bounces + 1;
+      count.innerHTML = bounces;
+
+     
+      if (Math.abs(speed) < 2) {
+        clearInterval(timer);
+        timer = null;
+      }
+    }
+
+    ball.style.top = ballY + "px";
+  }
+
+  document.getElementById("start").onclick = function () {
+    if (timer) return;
+    resetBall();
+    timer = setInterval(move, 16);
+  };
+
+  document.getElementById("reset").onclick = resetBall;
+
+  function resetBall() {
+    clearInterval(timer);
+    timer = null;
+    ballY = 0;
+    speed = 0;
+    bounces = 0;
+    count.innerHTML = 0;
+    ball.style.top = "0px";
+  }
+
+  document.getElementById("back").onclick = function () {
+    history.back();
+  };
+</script>
+</html>
