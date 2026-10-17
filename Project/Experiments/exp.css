@@ -1,0 +1,173 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: cursive;
+    background-color: #faf8ff;
+    color: #000;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: white;
+    border-bottom: 2px solid #e5dcf7;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #7c3aed;
+}
+
+.nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.nav ul a {
+    color: #000;
+    transition: color 0.2s;
+}
+
+.nav ul a:hover {
+    color: #7c3aed;
+}
+
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+}
+
+
+.title {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 50px 0 20px;
+    text-align: center;
+}
+
+.title h1 {
+    margin-bottom: 12px;
+    color: #5b21b6;
+    font-size: 36px;
+}
+
+.title p {
+    color: #000;
+    font-size: 16px;
+}
+
+
+section {
+    margin-top: 45px;
+}
+
+section h2 {
+    margin-bottom: 22px;
+    padding-bottom: 12px;
+    color: #5b21b6;
+    font-size: 26px;
+    border-bottom: 2px solid #e5dcf7;
+}
+
+section h2 span {
+    color: #000;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 22px;
+    background-color: white;
+    border: 1px solid #e5dcf7;
+    border-radius: 8px;
+    transition: border-color 0.2s, transform 0.2s;
+}
+
+.card:hover {
+    border-color: #c4b5fd;
+    transform: translateY(-3px);
+}
+
+.card h3 {
+    color: #5b21b6;
+    font-size: 19px;
+}
+
+.card p {
+    color: #000;
+    font-size: 14px;
+}
+
+.card p strong {
+    color: #7c3aed;
+    font-weight: normal;
+}
+
+
+.card a {
+    align-self: flex-start;
+    margin-top: auto;
+    padding: 9px 18px;
+    background-color: #7c3aed;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.card a:hover {
+    background-color: #5b21b6;
+}
+
+
+footer {
+    padding: 25px 20px;
+    text-align: center;
+    background-color: #efe9fb;
+    color: #5b21b6;
+    border-top: 1px solid #e5dcf7;
+    font-size: 14px;
+}
+
+footer p {
+    margin: 3px 0;
+}
+
+footer a {
+    color: #5b21b6;
+    font-weight: bold;
+    text-decoration: underline;
+}
