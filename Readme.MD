@@ -34,5 +34,8 @@ Open the `Project` folder and launch the HTML page in your browser.
 - JavaScript
 
 ## Author
+[Himanshu Sapkota
 
-[Himanshu Sapkota](https://github.com/himanshusapkota)
+## AI Usage
+
+In this project the AI was used for the styling. I was Stuck in CSS and I took the help of AI to do it
